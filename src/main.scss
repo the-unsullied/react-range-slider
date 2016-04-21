@@ -1,0 +1,116 @@
+$rangeslider--breakpoints: (
+    "palm"          "screen and (max-width: 525px)",
+    "lap"           "screen and (min-width: 526px) and (max-width: 768px)",
+    "lap-and-up"    "screen and (min-width: 769px)",
+    "portable"      "screen and (max-width: 768px)",
+    "desk"          "screen and (min-width: 769px)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+@mixin rangeslider-vendor($prop, $val) {
+  -webkit-#{$prop}: #{$val};
+  -ms-#{$prop}: #{$val};
+  -moz-#{$prop}: #{$val};
+  -o-#{$prop}: #{$val};
+  #{$prop}: #{$val};
+}
+
+@mixin rangeslider-media-query($mq) {
+
+    $breakpoint-found: false;
+
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint in $rangeslider--breakpoints {
+
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq == $alias and $condition {
+
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media #{$condition} {
+                @content;
+            }
+
+        }
+
+    }
+
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+
+}
+
+$rangeslider-handle-size-desk: 30px !default;
+$rangeslider-handle-size-palm: 40px !default;
+$range-slider-bg-color: #e6e6e6 !default;
+$range-slider-fill-color: #FE9100 !default;
+$range-slider-handle-bg-color: white !default;
+$range-slider-handle-border-color: #cccccc !default;
+
+.rangeslider {
+  height: 10px;
+  margin: 20px 0;
+  position: relative;
+  background: $range-slider-bg-color;
+}
+
+.rangeslider,
+.rangeslider__fill {
+  display: block;
+}
+
+.rangeslider__fill,
+.rangeslider__handle {
+  position: absolute;
+}
+
+.rangeslider__fill {
+  height: 30%;
+  background: $range-slider-fill-color;
+  top: 35%;
+}
+
+.rangeslider__handle {
+  background-color: $range-slider-handle-bg-color;
+  background-image: url('/static/img/range_slider_handle.svg');
+  border: 1px solid $range-slider-handle-border-color;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  width: $rangeslider-handle-size-desk;
+  height: $rangeslider-handle-size-desk;
+  top: -($rangeslider-handle-size-desk/2) + 5;
+  @include rangeslider-vendor(user-select, none);
+  &:active {
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+  @include rangeslider-media-query(palm) {
+    width: $rangeslider-handle-size-palm,;
+    height: $rangeslider-handle-size-palm;
+    top: -($rangeslider-handle-size-palm/2) + 5;
+  }
+}
+
+.rangeslider--disabled {
+  .rangeslider__fill {
+    background: transparent;
+  }
+  .rangeslider__handle {
+    background-color: #f4f4f4;
+    box-shadow: none;
+    border-color: #E2E2E2;
+  }
+}
