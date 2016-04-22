@@ -1,0 +1,45 @@
+$range-slider-fill-color: #E27A3F;
+@import "jspm:unsullied-react-range-slider/dist/RangeSlider";
+
+html, body {
+    font-family: "Arial"
+}
+
+body {
+  background: #45B29D;
+  padding: 20px;
+  color: white;
+}
+
+.section {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+.section-code {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: white;
+  color: #334D5C;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+
+.rangeslider {
+  background: white;
+  padding: 0 4px;
+  border-radius: 8px;
+}
+
+.rangeslider__handle {
+  border-radius: 2px;
+}
