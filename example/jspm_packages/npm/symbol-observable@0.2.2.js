@@ -1,1 +1,0 @@
-module.exports = require("npm:symbol-observable@0.2.2/index");

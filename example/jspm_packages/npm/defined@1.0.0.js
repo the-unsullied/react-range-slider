@@ -1,1 +1,0 @@
-module.exports = require("npm:defined@1.0.0/index.js");

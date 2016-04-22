@@ -1,1 +1,0 @@
-module.exports = require("npm:history@2.1.0/lib/index");

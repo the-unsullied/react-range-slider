@@ -1,1 +1,0 @@
-module.exports = require("npm:commoner@0.10.4/main.js");
