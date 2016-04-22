@@ -2,6 +2,8 @@
 
 A draggable selection ui that allows user to select a value from a range of values.
 
+[Live example](http://react-rangeslider.surge.sh/)
+
 ## Params
 
 **max** {Number} The maximum number the range slider can go to.
