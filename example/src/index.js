@@ -6,9 +6,9 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import thunk from 'redux-thunk';
 
-import appReducer from '/src/reducers/app-reducer.js';
+import appReducer from './reducers/app-reducer.js';
 
-import { AppContainer } from '/src/components/App.jsx!';
+import { AppContainer } from './components/App.jsx!';
 
 const store = createStore(
   combineReducers({

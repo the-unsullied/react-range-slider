@@ -108,7 +108,7 @@ function compileJs() {
     return builder.loadConfig('config.js')
       .then(() => {
         return builder.buildStatic('./src/index.js', `${jsDir}/app.js`, {
-          minify: true,
+          minify: false,
           sourceMaps: false,
           runtime: false
         });
