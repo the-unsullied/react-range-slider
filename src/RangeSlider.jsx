@@ -16,7 +16,7 @@ export default React.createClass({
       max:        React.PropTypes.number,
       step:       React.PropTypes.number,
       value:      React.PropTypes.number,
-      onChange:   React.PropTypes.func,
+      onChange:   React.PropTypes.func.isRequired,
       className:  React.PropTypes.string,
       isDisabled: React.PropTypes.boolean
     }
@@ -28,7 +28,8 @@ export default React.createClass({
       max: 100,
       step: 1,
       value: 0,
-      isDisabled: false
+      isDisabled: false,
+      onChange: (val) => {}
     }
   },
 
@@ -129,7 +130,7 @@ export default React.createClass({
     const coords = this.coordinates(position);
     const fillStyle = {width: `${coords.fill}px`};
     const handleStyle = {left: `${coords.handle}px`};
-    const isDisabled = this.props.max === 0 || this.props.disabled;
+    const isDisabled = this.props.max === 0 || this.props.isDisabled;
 
     return (
       <div

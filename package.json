@@ -8,7 +8,7 @@
     "url" : "https://github.com/the-unsullied/react-range-slider"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && babel src/RangeSlider.jsx --out-file dist/RangeSlider.js && node ./scripts/build-dist && cp src/main.scss dist/RangeSlider.scss && node ./scripts/build-dist",
+    "build": "rm -rf dist && mkdir -p dist && babel src/RangeSlider.jsx --out-file dist/RangeSlider.js && node ./scripts/build-dist && cp src/main.scss dist/RangeSlider.scss && node ./scripts/build-dist && cp ./images/range_slider_handle.svg ./dist",
     "babel": "babel src/RangeSlider.jsx --out-file dist/RangeSlider.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

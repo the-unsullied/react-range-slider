@@ -139,7 +139,7 @@ exports.default = _react2.default.createClass({
     var coords = this.coordinates(position);
     var fillStyle = { width: coords.fill + 'px' };
     var handleStyle = { left: coords.handle + 'px' };
-    var isDisabled = this.props.max === 0 || this.props.disabled;
+    var isDisabled = this.props.max === 0 || this.props.isDisabled;
 
     return _react2.default.createElement(
       'div',

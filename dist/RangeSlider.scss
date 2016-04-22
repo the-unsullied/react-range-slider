@@ -81,7 +81,7 @@ $range-slider-handle-border-color: #cccccc !default;
 
 .rangeslider__handle {
   background-color: $range-slider-handle-bg-color;
-  background-image: url('/static/img/range_slider_handle.svg');
+  background-image: url('range_slider_handle.svg');
   border: 1px solid $range-slider-handle-border-color;
   cursor: pointer;
   display: inline-block;
