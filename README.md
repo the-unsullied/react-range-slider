@@ -3,6 +3,34 @@
 A draggable selection ui that allows user to select a value from a range of values.
 
 [Live example](http://react-rangeslider.surge.sh/)
+![Range Slider Screen Shot](https://github.com/the-unsullied/react-range-slider/blob/demo/Screen%20Shot%202016-06-23%20at%2017.09.47.png)
+
+## Installation
+```
+  npm install --save react-page-banne
+```
+
+## Usage
+```
+  import PageBanner from 'react-page-banner';
+  
+  React.createClass({
+  
+    closePageBanner() {
+      this.setState({shouldShowPageBanner: false});
+    },
+    render() {
+      { 
+        this.state.shouldShowPageBanner ? 
+          <PageBanner type={'success'}
+           message='Hey its a page banner!'
+           duration={5000}
+           sticky={false}
+           afterClose={this.closePageBanner}/> : null
+      }
+    }
+  });
+```
 
 ## Params
 
