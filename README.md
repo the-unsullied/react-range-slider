@@ -2,7 +2,7 @@
 
 A draggable selection ui that allows user to select a value from a range of values.
 
-[Live example](http://react-rangeslider.surge.sh/)
+**[Live example](http://react-rangeslider.surge.sh/)**
 
 ![Range Slider Screen Shot](https://github.com/the-unsullied/react-range-slider/blob/demo/Screen%20Shot%202016-06-23%20at%2017.09.47.png)
 
