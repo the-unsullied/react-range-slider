@@ -8,7 +8,7 @@ A draggable selection ui that allows user to select a value from a range of valu
 
 ## Installation
 ```
-  npm install --save react-page-banner
+  npm i unsullied-react-range-slider
 ```
 
 ## Usage
